@@ -26,6 +26,8 @@ where = ["src"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
+addopts = "-m 'not e2e'"
+markers = ["e2e: end-to-end test with a real browser; runs only in Docker"]
 
 [tool.ruff]
 line-length = 88
