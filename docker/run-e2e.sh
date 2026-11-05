@@ -12,12 +12,12 @@ docker build -f "${root}/docker/Dockerfile" -t "${image}" "${root}"
 
 env_args=(-e RESULTS_DIR=/results)
 if [[ -n "${FORM_URL:-}" ]]; then
-    env_args+=(-e FORM_URL)
+	env_args+=(-e FORM_URL)
 fi
 
 set +e
 MSYS_NO_PATHCONV=1 docker run --rm "${env_args[@]}" \
-    -v "${results}:/results" "${image}" \
-    python -m pytest -m e2e -q 2>&1 | tee "${results}/e2e.log"
+	-v "${results}:/results" "${image}" \
+	python -m pytest -m e2e -q 2>&1 | tee "${results}/e2e.log"
 status=${PIPESTATUS[0]}
 exit "${status}"
