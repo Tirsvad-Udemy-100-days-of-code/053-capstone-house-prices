@@ -25,7 +25,7 @@ Tracks backward/forward links between artifact instances so that the Business Ca
 | [SA-001] | SA | en | it | [BC-001] | [PP-001] | [RC-002] |
 | [PP-001] | PP | en | it | [BC-001], [SA-001] | [MIL-001], [MIL-002], [MIL-003], [MIL-004] | [RC-003] |
 | [MIL-001] | MIL | en | it | [PP-001] | - | [RC-004], [RC-008] |
-| [MIL-002] | MIL | en | it | [PP-001], [MIL-001] | - | [RC-005] |
+| [MIL-002] | MIL | en | it | [PP-001], [MIL-001] | - | [RC-005], [RC-009] |
 | [MIL-003] | MIL | en | it | [PP-001], [MIL-002] | - | [RC-006] |
 | [MIL-004] | MIL | en | it | [PP-001], [MIL-002], [MIL-003] | - | [RC-007] |
 
@@ -71,4 +71,5 @@ Tracks backward/forward links between artifact instances so that the Business Ca
 [RC-006]: ./reviews/rc-006-mil-003-form-filler.md
 [RC-007]: ./reviews/rc-007-mil-004-docs-wiki.md
 [RC-008]: ./reviews/rc-008-mil-001-code.md
+[RC-009]: ./reviews/rc-009-mil-002-code.md
 [6bd0143]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/053-capstone-house-prices/commit/6bd0143f176299bca7c599c1cae0818f20eefcde
