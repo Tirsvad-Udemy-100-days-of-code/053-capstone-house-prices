@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-05 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | pending |
+| 2026-11-05 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [6bd0143] |
 
 ---
 
@@ -66,3 +66,4 @@ Go — every Mandatory criterion passes. The review is not independent: the auth
 [SA-001]: ../../stakeholder-analysis.md
 [QC-SA-001]: ../../../framework/qc/artifacts/qc-stakeholder-analysis.md
 [QC-LANG-001]: ../../../framework/qc/artifacts/qc-language-domain.md
+[6bd0143]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/053-capstone-house-prices/commit/6bd0143f176299bca7c599c1cae0818f20eefcde

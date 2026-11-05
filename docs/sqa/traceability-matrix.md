@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-05 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | pending |
+| 2026-11-05 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [6bd0143] |
 
 ---
 
@@ -27,3 +27,4 @@
 [RC-005]: ./reviews/rc-005-mil-002-scraper.md
 [RC-006]: ./reviews/rc-006-mil-003-form-filler.md
 [RC-007]: ./reviews/rc-007-mil-004-docs-wiki.md
+[6bd0143]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/053-capstone-house-prices/commit/6bd0143f176299bca7c599c1cae0818f20eefcde
