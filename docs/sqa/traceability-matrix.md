@@ -13,6 +13,49 @@
 
 ---
 
+## Purpose
+
+Tracks backward/forward links between artifact instances so that the Business Case's cross-artifact traceability success criterion is measurable. A row is added or updated whenever an artifact instance is created or reviewed.
+
+## Traceability Table
+
+| Artifact Instance | Type | Language | Domain | Upstream (Backward Link) | Downstream (Forward Link) | Last Reviewed (RC-ID) |
+| --- | --- | --- | --- | --- | --- | --- |
+| [BC-001] | BC | en | it | - | [SA-001], [PP-001] | [RC-001] |
+| [SA-001] | SA | en | it | [BC-001] | [PP-001] | [RC-002] |
+| [PP-001] | PP | en | it | [BC-001], [SA-001] | [MIL-001], [MIL-002], [MIL-003], [MIL-004] | [RC-003] |
+| [MIL-001] | MIL | en | it | [PP-001] | - | [RC-004], [RC-008] |
+| [MIL-002] | MIL | en | it | [PP-001], [MIL-001] | - | [RC-005] |
+| [MIL-003] | MIL | en | it | [PP-001], [MIL-002] | - | [RC-006] |
+| [MIL-004] | MIL | en | it | [PP-001], [MIL-002], [MIL-003] | - | [RC-007] |
+
+## Concern Coverage
+
+| Concern (CN-ID) | Views that answer it | Decisions (ADR) | Quality check (TP) | Status |
+| --- | --- | --- | --- | --- |
+| CN-001 | [PP-001], [MIL-001] | - | - | Planned |
+| CN-002 | [MIL-002], [MIL-003] | - | - | Planned |
+| CN-003 | [MIL-001], [MIL-003] | - | - | Planned |
+| CN-004 | [MIL-002] | - | - | Planned |
+| CN-005 | [MIL-001], [MIL-004] | - | - | Planned |
+| CN-006 | [MIL-004] | - | - | Planned |
+| CN-007 | [MIL-001] | - | - | Planned |
+| CN-008 | [MIL-001] | - | - | Planned |
+
+## Open Inconsistencies
+
+| # | Views | Inconsistency | Found in (RC-ID) | Status | Resolved in |
+| --- | --- | --- | --- | --- | --- |
+| - | - | None found | - | Closed | - |
+
+## Coverage Notes
+
+- `-` in Upstream means foundational; in Downstream it means nothing is built on it yet.
+- Code is traced through its milestone: RC-008 reviews the code of MIL-001.
+- No `AD`, `TP`, `ADR` or view exists yet; concerns are `Planned` until a milestone answers them.
+
+---
+
 [BC-001]: ../business-case.md
 [SA-001]: ../stakeholder-analysis.md
 [PP-001]: ../project-plan.md
