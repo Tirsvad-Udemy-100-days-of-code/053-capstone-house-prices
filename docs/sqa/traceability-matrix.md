@@ -10,7 +10,7 @@
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
 | 2026-11-05 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [6bd0143] |
-| 2026-11-05 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Add RC-010 for MIL-003 code | pending |
+| 2026-11-05 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Add RC-010 for MIL-003 code | [f5e0653] |
 
 ---
 
@@ -75,3 +75,4 @@ Tracks backward/forward links between artifact instances so that the Business Ca
 [RC-009]: ./reviews/rc-009-mil-002-code.md
 [RC-010]: ./reviews/rc-010-mil-003-code.md
 [6bd0143]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/053-capstone-house-prices/commit/6bd0143f176299bca7c599c1cae0818f20eefcde
+[f5e0653]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/053-capstone-house-prices/commit/f5e0653de014dd4c826ad56f797eb7326f1faf19
