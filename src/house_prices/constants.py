@@ -42,3 +42,37 @@ PRICE_MARKER: Final[str] = "$"
 ## @var FORM_URL_ENV_VAR
 ## @brief Name of the environment variable that holds the form address.
 FORM_URL_ENV_VAR: Final[str] = "FORM_URL"
+
+## @var FORM_TIMEOUT_SECONDS
+## @brief Seconds to wait for a form element before giving up.
+FORM_TIMEOUT_SECONDS: Final[float] = 10.0
+
+## @var FORM_INPUT_SELECTOR
+## @brief CSS selector for the short-answer inputs of the form, in page order.
+FORM_INPUT_SELECTOR: Final[str] = 'input[type="text"]'
+
+## @var FORM_INPUT_COUNT
+## @brief Number of short-answer inputs the form has (address, price, link).
+FORM_INPUT_COUNT: Final[int] = 3
+
+## @var FORM_SUBMIT_XPATH
+## @brief XPath of the submit button of the form.
+FORM_SUBMIT_XPATH: Final[str] = '//span[text()="Submit"]/ancestor::div[@role="button"]'
+
+## @var FORM_CONFIRMATION_XPATH
+## @brief XPath of the text that confirms the response was recorded.
+FORM_CONFIRMATION_XPATH: Final[str] = (
+    '//*[contains(text(), "Your response has been recorded")]'
+)
+
+## @var CHROME_BIN_ENV_VAR
+## @brief Name of the environment variable that holds the Chrome binary path.
+CHROME_BIN_ENV_VAR: Final[str] = "CHROME_BIN"
+
+## @var CHROMEDRIVER_PATH_ENV_VAR
+## @brief Name of the environment variable that holds the chromedriver path.
+CHROMEDRIVER_PATH_ENV_VAR: Final[str] = "CHROMEDRIVER_PATH"
+
+## @var CHROME_WINDOW_SIZE
+## @brief Window size used by the headless browser.
+CHROME_WINDOW_SIZE: Final[str] = "1280,1024"
