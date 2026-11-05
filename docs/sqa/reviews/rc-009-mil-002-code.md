@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-05 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | pending |
+| 2026-11-05 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [dc74332] |
 
 ---
 
@@ -59,3 +59,4 @@ Go — every Mandatory criterion passes or is N-A with a reason. The review is n
 
 [MIL-002]: ../../milestones/mil-002-scraper.md
 [QC-PY-001]: ../../../framework/qc/code/qc-programming-python.md
+[dc74332]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/053-capstone-house-prices/commit/dc74332c290ed72d0751d6dd543898db1f4ba5f4
