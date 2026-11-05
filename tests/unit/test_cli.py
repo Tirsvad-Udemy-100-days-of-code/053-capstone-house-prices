@@ -71,6 +71,12 @@ class FakeElement:
         if self._is_submit:
             self._driver.submits += 1
 
+    def is_displayed(self) -> bool:
+        return True
+
+    def is_enabled(self) -> bool:
+        return True
+
 
 class FakeDriver:
     def __init__(self, *, fail_get: bool = False) -> None:

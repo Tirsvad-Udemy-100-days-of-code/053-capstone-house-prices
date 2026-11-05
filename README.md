@@ -75,6 +75,8 @@ python -m house_prices
 
 On Windows PowerShell use `$env:FORM_URL = "https://docs.google.com/forms/d/e/<your-form-id>/viewform"`.
 
+Google shows the form in the language of the visitor's location, and the program finds the "Submit" button and the confirmation text in English. Add `?hl=en` to the link (`.../viewform?hl=en`) so the form always opens in English. The form must be open to anyone with the link, because the browser the program starts is not signed in.
+
 Generate the API documentation with `doxygen Doxyfile`; the result is in `docs/doxygen/html/`.
 
 ## 🧪 Tests

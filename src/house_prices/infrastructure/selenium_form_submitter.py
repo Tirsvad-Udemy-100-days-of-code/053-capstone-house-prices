@@ -1,8 +1,11 @@
 """Selenium implementation of the FormSubmitter port."""
 
+from typing import Literal
+
 from selenium.common.exceptions import WebDriverException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
+from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.ui import WebDriverWait
 
 from house_prices.constants import (
@@ -62,17 +65,23 @@ class SeleniumFormSubmitter:
     ## @param listing The listing to type.
     def _fill(self, listing: Listing) -> None:
         """Type address, price and link into the first three text inputs."""
-        inputs = self._wait.until(
-            lambda drv: (
-                drv.find_elements(By.CSS_SELECTOR, FORM_INPUT_SELECTOR)
-                if len(drv.find_elements(By.CSS_SELECTOR, FORM_INPUT_SELECTOR))
-                >= FORM_INPUT_COUNT
-                else False
-            )
-        )
+        inputs = self._wait.until(self._inputs_ready)
         values = (listing.address, listing.price, listing.link)
         for element, value in zip(inputs, values, strict=False):
             element.send_keys(value)
+
+    ## @brief Return the text inputs once all are shown and enabled.
+    ## @param drv The driver being polled.
+    ## @return The inputs, or False while the page is still loading.
+    @staticmethod
+    def _inputs_ready(drv: WebDriver) -> list[WebElement] | Literal[False]:
+        """Return the form inputs when the page can be typed into."""
+        found = drv.find_elements(By.CSS_SELECTOR, FORM_INPUT_SELECTOR)
+        if len(found) >= FORM_INPUT_COUNT and all(
+            element.is_displayed() and element.is_enabled() for element in found
+        ):
+            return found
+        return False
 
     ## @brief Click the submit button once it is present.
     def _click_submit(self) -> None:

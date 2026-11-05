@@ -20,9 +20,22 @@ LISTING = Listing(link="http://x/1", price="$1,000", address="1 Main St")
 
 
 class FakeElement:
-    def __init__(self, events: list[tuple[str, str]], name: str) -> None:
+    def __init__(
+        self,
+        events: list[tuple[str, str]],
+        name: str,
+        *,
+        displayed: bool = True,
+    ) -> None:
         self._events = events
         self._name = name
+        self._displayed = displayed
+
+    def is_displayed(self) -> bool:
+        return self._displayed
+
+    def is_enabled(self) -> bool:
+        return True
 
     def send_keys(self, value: str) -> None:
         self._events.append(("type:" + self._name, value))
@@ -32,10 +45,18 @@ class FakeElement:
 
 
 class FakeDriver:
-    def __init__(self, *, inputs: int = 3, fail_get: bool = False) -> None:
+    def __init__(
+        self,
+        *,
+        inputs: int = 3,
+        fail_get: bool = False,
+        hidden_polls: int = 0,
+    ) -> None:
         self.events: list[tuple[str, str]] = []
         self._inputs = inputs
         self._fail_get = fail_get
+        ## Number of input lookups that still report the inputs as hidden.
+        self._hidden_polls = hidden_polls
 
     def get(self, url: str) -> None:
         if self._fail_get:
@@ -44,7 +65,12 @@ class FakeDriver:
 
     def find_elements(self, by: str, value: str) -> list[FakeElement]:
         if value == FORM_INPUT_SELECTOR:
-            return [FakeElement(self.events, f"input{i}") for i in range(self._inputs)]
+            displayed = self._hidden_polls <= 0
+            self._hidden_polls -= 1
+            return [
+                FakeElement(self.events, f"input{i}", displayed=displayed)
+                for i in range(self._inputs)
+            ]
         if value == FORM_SUBMIT_XPATH:
             return [FakeElement(self.events, "submit")]
         if value == FORM_CONFIRMATION_XPATH:
@@ -94,6 +120,24 @@ def test_submit_raises_form_error_when_driver_fails() -> None:
         make(FakeDriver(fail_get=True)).submit(LISTING)
 
     assert isinstance(info.value.__cause__, WebDriverException)
+
+
+def test_submit_waits_until_inputs_are_displayed() -> None:
+    driver = FakeDriver(hidden_polls=3)
+
+    SeleniumFormSubmitter(cast(WebDriver, driver), FORM_URL, 5).submit(LISTING)
+
+    typed = [e for e in driver.events if e[0].startswith("type:")]
+    assert len(typed) == 3
+
+
+def test_submit_raises_form_error_when_inputs_never_displayed() -> None:
+    driver = FakeDriver(hidden_polls=10**9)
+
+    with pytest.raises(FormError):
+        make(driver).submit(LISTING)
+
+    assert not any(e[0].startswith("type:") for e in driver.events)
 
 
 def test_submit_raises_form_error_when_inputs_missing() -> None:

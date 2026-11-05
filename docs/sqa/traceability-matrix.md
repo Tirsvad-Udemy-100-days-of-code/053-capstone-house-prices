@@ -10,6 +10,7 @@
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
 | 2026-11-05 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [6bd0143] |
+| 2026-11-05 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Add RC-010 for MIL-003 code | pending |
 
 ---
 
@@ -26,7 +27,7 @@ Tracks backward/forward links between artifact instances so that the Business Ca
 | [PP-001] | PP | en | it | [BC-001], [SA-001] | [MIL-001], [MIL-002], [MIL-003], [MIL-004] | [RC-003] |
 | [MIL-001] | MIL | en | it | [PP-001] | - | [RC-004], [RC-008] |
 | [MIL-002] | MIL | en | it | [PP-001], [MIL-001] | - | [RC-005], [RC-009] |
-| [MIL-003] | MIL | en | it | [PP-001], [MIL-002] | - | [RC-006] |
+| [MIL-003] | MIL | en | it | [PP-001], [MIL-002] | - | [RC-006], [RC-010] |
 | [MIL-004] | MIL | en | it | [PP-001], [MIL-002], [MIL-003] | - | [RC-007] |
 
 ## Concern Coverage
@@ -51,7 +52,7 @@ Tracks backward/forward links between artifact instances so that the Business Ca
 ## Coverage Notes
 
 - `-` in Upstream means foundational; in Downstream it means nothing is built on it yet.
-- Code is traced through its milestone: RC-008 reviews the code of MIL-001.
+- Code is traced through its milestone: RC-008 reviews the code of MIL-001, RC-009 that of MIL-002 and RC-010 that of MIL-003.
 - No `AD`, `TP`, `ADR` or view exists yet; concerns are `Planned` until a milestone answers them.
 
 ---
@@ -72,4 +73,5 @@ Tracks backward/forward links between artifact instances so that the Business Ca
 [RC-007]: ./reviews/rc-007-mil-004-docs-wiki.md
 [RC-008]: ./reviews/rc-008-mil-001-code.md
 [RC-009]: ./reviews/rc-009-mil-002-code.md
+[RC-010]: ./reviews/rc-010-mil-003-code.md
 [6bd0143]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/053-capstone-house-prices/commit/6bd0143f176299bca7c599c1cae0818f20eefcde
