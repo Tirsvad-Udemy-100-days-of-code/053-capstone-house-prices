@@ -5,6 +5,7 @@ Scrapes rental listings from the Zillow clone with BeautifulSoup and fills a Goo
 ## 📚 Table of Contents
 
 - [Overview](#-overview)
+- [Screenshots](#-screenshots)
 - [Requirements](#-requirements)
 - [Setup](#-setup)
 - [Run](#-run)
@@ -30,7 +31,18 @@ The repository is laid out as follows:
 | `docs/` | Project documents (business case, plan, milestones, reviews) and the wiki |
 | `Doxyfile` | Doxygen configuration for the source comments |
 
-The wiki explains in English, Danish and Bahasa Malaysia what each lecture step taught.
+The wiki explains in English, Danish and Bahasa Malaysia what each lecture step taught (see [Screenshots](#-screenshots)).
+
+## 📸 Screenshots
+
+One screenshot per lecture step. The [wiki][wiki-en] explains what each step taught, in [English][wiki-en], [Dansk][wiki-da] and [Bahasa Malaysia][wiki-ms].
+
+| Step | Screenshot |
+| --- | --- |
+| 1. Scrape and clean the listings | ![Scrape output](./docs/images/01-scrape-output.png) |
+| 2. Create the form and the Sheet | ![Empty form](./docs/images/02-empty-form.png) |
+| 3. Fill the form with Selenium | ![Response recorded](./docs/images/03-response-recorded.png) |
+| 4. Check the Sheet | ![Sheet with responses](./docs/images/04-sheet-responses.png) |
 
 ## 📋 Requirements
 
@@ -117,6 +129,9 @@ The documents a newcomer needs, in reading order.
 ---
 
 [license]: ./LICENSE
+[wiki-en]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/053-capstone-house-prices/wiki/Home
+[wiki-da]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/053-capstone-house-prices/wiki/Home-da
+[wiki-ms]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/053-capstone-house-prices/wiki/Home-ms
 [repository]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/053-capstone-house-prices
 [documentation]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/053-capstone-house-prices/wiki
 [issues]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/053-capstone-house-prices/issues
