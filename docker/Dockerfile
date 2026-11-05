@@ -12,6 +12,10 @@ WORKDIR /app
 COPY pyproject.toml ./
 COPY src ./src
 COPY tests ./tests
-RUN pip install --no-cache-dir -e ".[dev]"
+RUN pip install --no-cache-dir -e ".[dev]" \
+    && useradd --create-home runner \
+    && chown -R runner /app
+
+USER runner
 
 CMD ["python", "-m", "pytest", "-m", "e2e", "-q"]
